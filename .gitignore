@@ -1,0 +1,14 @@
+venv/
+__pycache__/
+*.pyc
+.env
+*.log
+
+.aws/
+credentials
+config
+
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
