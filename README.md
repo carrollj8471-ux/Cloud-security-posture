@@ -86,7 +86,7 @@ The auditor performs read-only checks across IAM, S3, EC2 security groups, Cloud
 
 ### After Remdiation
 
-![Cloud Security Audit Output](screenshots/04-assessment-report(3).png)
+![Cloud Security Audit Output](screenshots/06-after-remediation.png)
 
 ### Findings CSV
 
