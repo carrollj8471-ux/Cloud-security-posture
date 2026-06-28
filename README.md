@@ -86,7 +86,7 @@ The auditor performs read-only checks across IAM, S3, EC2 security groups, Cloud
 
 ### After Remdiation
 
-![Cloud Security Audit Output](screenshots/02-cloud-security-audit-output(2).png)
+![Cloud Security Audit Output](screenshots/04-assessment-report(3).png)
 
 ### Findings CSV
 
@@ -106,7 +106,7 @@ The auditor performs read-only checks across IAM, S3, EC2 security groups, Cloud
 
 ### After Remdiation
 
-![Assessment Report](screenshots/04-assessment-report(3).png)
+![Assessment Report](screenshots/02-cloud-security-audit-output(2).png)
 
 ## Security Takeaway
 
