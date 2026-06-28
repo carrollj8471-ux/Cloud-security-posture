@@ -1,66 +1,95 @@
-\# Cloud Security Remediation Guide
+# Cloud Security Remediation Guide
 
+## IAM Remediation
 
-
-\## IAM Remediation
-
-
-
-\### Enable Root MFA
-
-
+### Enable Root MFA
 
 Enable MFA for the AWS root account and avoid using root for daily operations.
 
-
-
-\### Require IAM User MFA
-
-
+### Require IAM User MFA
 
 For IAM users, require MFA or migrate human access to centralized identity.
 
-
-
-\### Strengthen Password Policy
-
-
+### Strengthen Password Policy
 
 Recommended controls:
 
+- Minimum password length of 12 or higher
+- Require uppercase characters
+- Require lowercase characters
+- Require numbers
+- Require symbols
+- Rotate or remove unused access keys
 
+### Review Overly Permissive IAM Policies
 
-\- Minimum password length of 12 or higher
+Avoid IAM policies that allow all actions against all resources.
 
-\- Require uppercase characters
+Risky pattern:
 
-\- Require lowercase characters
+- Effect: Allow
+- Action: *
+- Resource: *
 
-\- Require numbers
+Use least privilege permissions scoped to required services, actions, and resources.
 
-\- Require symbols
+---
 
-\- Rotate or remove unused access keys
+## S3 Remediation
 
+### Enable Block Public Access
 
+Enable account-level and bucket-level S3 Block Public Access unless there is a documented exception.
 
-\### Review Overly Permissive IAM Policies
+### Enable Encryption
 
+Enable default encryption for all S3 buckets.
 
+---
 
-Avoid:
+## Network Remediation
 
+### Restrict Security Groups
 
+Avoid unrestricted inbound rules from:
 
-```json
+- 0.0.0.0/0
+- ::/0
 
-{
+Especially for:
 
-&#x20; "Effect": "Allow",
+- 22 SSH
+- 3389 RDP
+- 3306 MySQL
+- 5432 PostgreSQL
+- All traffic
 
-&#x20; "Action": "\*",
+Restrict access to trusted IP ranges, VPNs, or private networks.
 
-&#x20; "Resource": "\*"
+---
 
-}
+## Logging Remediation
 
+### Enable CloudTrail
+
+Enable CloudTrail and confirm that logging is active.
+
+Recommended practices:
+
+- Multi-region trail
+- Log file validation
+- Centralized S3 log bucket
+- Restricted access to logs
+- Integration with SIEM or detection platform
+
+---
+
+## Governance Remediation
+
+### Review Default VPCs
+
+Remove unused default VPC resources or document approved usage.
+
+### Repeat Assessments
+
+Run the auditor after remediation to validate improvement.
