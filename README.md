@@ -106,7 +106,7 @@ The auditor performs read-only checks across IAM, S3, EC2 security groups, Cloud
 
 ### After Remdiation
 
-![Assessment Report](screenshots/04-assessment-report(2).png)
+![Assessment Report](screenshots/04-assessment-report(3).png)
 
 ## Security Takeaway
 
